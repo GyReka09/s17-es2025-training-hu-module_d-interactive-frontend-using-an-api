@@ -1,0 +1,73 @@
+*
+{
+    font-family: "Courier Prime", "Courier New", Courier, monospace;
+}
+
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login, .registration {
+  width: 400px;
+  border: 2px solid black;
+  padding: 40px;
+
+}
+
+.box h2 {
+  margin: 0 0 28px 0;
+  text-align: center;
+  font-size: 28px;
+  
+  font-weight: 700;
+  letter-spacing: 4px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 18px;
+  margin-bottom: 10px;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+
+}
+
+input {
+  border: 2px solid black;
+  padding: 12px 12px;
+  font-size: 16px;
+}
+
+input::placeholder {
+  color: #999;
+}
+
+button {
+  margin-top: 22px;
+  padding: 14px 12px;
+  border: 2px solid black;
+  cursor: pointer;
+
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.bottom-text {
+  margin-top: 18px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.bottom-text a {
+  text-decoration: underline;
+}
