@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./css/navigation.css";
 
 export default function Navigation() {
@@ -11,15 +11,15 @@ export default function Navigation() {
         </Link>
 
         <div className="nav-links">
-          <NavLink to="/dashboard" className="nav-link">
+          <Link to="/dashboard" className="nav-link">
             Írányítópult
-          </NavLink>
-          <NavLink to="/courses" className="nav-link">
+          </Link>
+          <Link to="/courses" className="nav-link">
             Képzések
-          </NavLink>
-          <NavLink to="/mentors" className="nav-link">
+          </Link>
+          <Link to="/mentors" className="nav-link">
             Mentorok
-          </NavLink>
+          </Link>
         </div>
 
         <div className="nav-right-side">

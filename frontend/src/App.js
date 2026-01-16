@@ -1,24 +1,21 @@
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import LoginPage from "./pages/LoginPage";
-import RegistrationPage from "./pages/RegistrationPage";
+import Registration from "./pages/RegistrationPage";
+import Login from "./pages/LoginPage";
 import Navigation from "./pages/Navigation";
 
-export default function App() {
-  const router = createBrowserRouter([
-    {
-      path: "/login",
-      element: <LoginPage />,
-    },
-    {
-      path: "/register",
-      element: <RegistrationPage />,
-    },
-    {
-      path: "/navigation",
-      element: <Navigation />,
-    },
-  ]);
-
-  return <RouterProvider router={router} />;
+function App() {
+  return (
+    <>
+      <div>
+        <Routes>
+            <Route path="/" element={<Navigation />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Registration />} />
+        </Routes>
+      </div>
+    </>
+  );
 }
+
+export default App;

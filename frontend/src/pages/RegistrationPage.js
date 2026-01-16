@@ -1,18 +1,19 @@
-import React, { useState } from "react";
-import "./css/login.css";
-import "./css/registration.css";
-import { NavLink } from "react-router-dom";
+import { useState } from "react";
+import useAuthContext from "../hooks/UseAuthContext";
+import { Link } from "react-router-dom";
 
 export default function RegistrationPage() {
   const [email, setEmail] = useState("");
-  const [fullname, setFullname] = useState("");
+  const [name, setname] = useState("");
   const [cpassword, setCPassword] = useState("");
   const [password, setPassword] = useState("");
 
-  function submit(event) {
+    const { register, errors } = useAuthContext();
+
+  const submit = async (event) => {
     event.preventDefault();
-    console.log("LOGIN:", { email, password });
-  }
+    register({ name, email, password, cpassword });
+  };
 
   return (
     <div className="page">
@@ -21,11 +22,16 @@ export default function RegistrationPage() {
         <form onSubmit={submit}>
           <label>Teljes név</label>
           <input
-            type="fullname"
-            value={fullname}
+            type="text"
+            value={name}
             placeholder="Add meg a teljes neved"
-            onChange={(e) => setFullname(e.target.value)}
+            onChange={(e) => setname(e.target.value)}
           />
+            {errors.name && (
+                    <div>
+                      <span>{errors.name[0]}</span>
+                    </div>
+                  )}
 
           <label>Email Cím</label>
           <input
@@ -34,7 +40,11 @@ export default function RegistrationPage() {
             placeholder="Add meg az email címed"
             onChange={(e) => setEmail(e.target.value)}
           />
-
+                  {errors.email && (
+                    <div>
+                      <span>{errors.email[0]}</span>
+                    </div>
+                  )}
           <label>Jelszó</label>
           <input
             type="password"
@@ -42,7 +52,11 @@ export default function RegistrationPage() {
             placeholder="Add meg a jelszavad"
             onChange={(e) => setPassword(e.target.value)}
           />
-
+                  {errors.password && (
+                    <div>
+                      <span>{errors.password[0]}</span>
+                    </div>
+                  )}
           <label>Jelszó megerősítése</label>
           <input
             type="password"
@@ -50,11 +64,15 @@ export default function RegistrationPage() {
             placeholder="Jelszó megerősítése"
             onChange={(e) => setCPassword(e.target.value)}
           />
-
+                {errors.cpassword && (
+                  <div>
+                    <span>{errors.cpassword[0]}</span>
+                  </div>
+                )}
           <button type="submit">Fiók létrehozása</button>
         </form>
         <p className="bottom-text">
-          Már van fiókod? <NavLink to="/login">Jelentkezz be itt</NavLink>
+          Már van fiókod? <Link to="/login">Jelentkezz be itt</Link>
         </p>
       </div>
     </div>

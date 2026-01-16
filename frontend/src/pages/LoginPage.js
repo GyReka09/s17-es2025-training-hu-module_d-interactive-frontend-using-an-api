@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./css/login.css";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -36,7 +36,7 @@ export default function LoginPage() {
         </form>
         <p className="bottom-text">
           Ingyenes a regisztráció!{" "}
-          <NavLink to="/register">Új fiók létrehozása</NavLink>
+          <Link to="/register">Új fiók létrehozása</Link>
         </p>
       </div>
     </div>
