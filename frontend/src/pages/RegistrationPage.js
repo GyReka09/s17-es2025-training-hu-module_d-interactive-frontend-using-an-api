@@ -8,7 +8,7 @@ export default function RegistrationPage() {
   const [cpassword, setCPassword] = useState("");
   const [password, setPassword] = useState("");
 
-    const { register, errors } = useAuthContext();
+  const { register, errors } = useAuthContext();
 
   const submit = async (event) => {
     event.preventDefault();
@@ -16,7 +16,7 @@ export default function RegistrationPage() {
   };
 
   return (
-    <div className="page">
+    <div className="auth-page">
       <div className="registration">
         <h1>Új fiók létrehozása</h1>
         <form onSubmit={submit}>
@@ -27,11 +27,11 @@ export default function RegistrationPage() {
             placeholder="Add meg a teljes neved"
             onChange={(e) => setname(e.target.value)}
           />
-            {errors.name && (
-                    <div>
-                      <span>{errors.name[0]}</span>
-                    </div>
-                  )}
+          {errors.name && (
+            <div>
+              <span>{errors.name[0]}</span>
+            </div>
+          )}
 
           <label>Email Cím</label>
           <input
@@ -40,11 +40,11 @@ export default function RegistrationPage() {
             placeholder="Add meg az email címed"
             onChange={(e) => setEmail(e.target.value)}
           />
-                  {errors.email && (
-                    <div>
-                      <span>{errors.email[0]}</span>
-                    </div>
-                  )}
+          {errors.email && (
+            <div>
+              <span>{errors.email[0]}</span>
+            </div>
+          )}
           <label>Jelszó</label>
           <input
             type="password"
@@ -52,11 +52,11 @@ export default function RegistrationPage() {
             placeholder="Add meg a jelszavad"
             onChange={(e) => setPassword(e.target.value)}
           />
-                  {errors.password && (
-                    <div>
-                      <span>{errors.password[0]}</span>
-                    </div>
-                  )}
+          {errors.password && (
+            <div>
+              <span>{errors.password[0]}</span>
+            </div>
+          )}
           <label>Jelszó megerősítése</label>
           <input
             type="password"
@@ -64,11 +64,11 @@ export default function RegistrationPage() {
             placeholder="Jelszó megerősítése"
             onChange={(e) => setCPassword(e.target.value)}
           />
-                {errors.cpassword && (
-                  <div>
-                    <span>{errors.cpassword[0]}</span>
-                  </div>
-                )}
+          {errors.cpassword && (
+            <div>
+              <span>{errors.cpassword[0]}</span>
+            </div>
+          )}
           <button type="submit">Fiók létrehozása</button>
         </form>
         <p className="bottom-text">

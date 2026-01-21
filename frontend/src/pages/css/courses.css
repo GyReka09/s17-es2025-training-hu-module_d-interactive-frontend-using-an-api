@@ -1,0 +1,120 @@
+.courses-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 16px 48px;
+}
+
+.courses {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.course-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.course-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.beiratkozva {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  font-size: 18px;
+}
+
+.szuro {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.szuro input,
+.szuro select {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.courseone {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 16px 48px;
+}
+
+.progress {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.progress-container {
+  height: 10px;
+  background: #e5e7eb;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progressbar {
+  height: 100%;
+  background: #2563eb;
+  border-radius: 999px;
+}
+
+.alahuzas {
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 8px;
+}
+
+.linkedin {
+  margin-top: 8px;
+}
+
+.muted {
+  color: #6b7280;
+}
+
+.keret {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 16px;
+  background: #fff;
+}
+
+.padding {
+  padding: 16px;
+}
+
+.nagy {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.szelesseg {
+  width: 100%;
+}
+
+.inactive {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.loading {
+  padding: 24px 0;
+  color: #6b7280;
+}

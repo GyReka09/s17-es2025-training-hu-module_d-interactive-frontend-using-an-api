@@ -1,4 +1,4 @@
-version: '3.8'
+version: "3.8"
 
 services:
   # Database
@@ -23,9 +23,9 @@ services:
     depends_on:
       - db
     environment:
-      PMA_HOST: 'db'
-      PMA_USER: 'root'
-      PMA_PASSWORD: 'root'
+      PMA_HOST: "db"
+      PMA_USER: "root"
+      PMA_PASSWORD: "root"
       PMA_ARBITRARY: 1
       UPLOAD_LIMIT: 64M
 
@@ -45,6 +45,7 @@ services:
   # Content Service
   content-service:
     image: ghcr.io/skillsit-hu/es2025-s17-training-competition-hu-module_c-content-services:latest
+    platform: linux/amd64
     restart: unless-stopped
     depends_on:
       - content-db
@@ -56,12 +57,13 @@ services:
   # Backend Solution
   backend-solution:
     image: ghcr.io/skillsit-hu/es2025-s17-training-competition-hu-module_c-solution:latest
+    platform: linux/amd64
     restart: unless-stopped
     depends_on:
       - db
       - content-service
     ports:
-      - 5000:5000
+      - 5001:5000
     environment:
       - DATABASE_URL=mysql://root:root@db:3306/skillshare_academy
       - NODE_ENV=production
